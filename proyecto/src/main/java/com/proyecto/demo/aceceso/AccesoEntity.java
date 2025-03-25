@@ -1,6 +1,7 @@
 package com.proyecto.demo.aceceso;
 
 import com.proyecto.demo.credencial.CredencialEntity;
+import com.proyecto.demo.historialacceso.HistorialAccesoEntity;
 import com.proyecto.demo.puerta.PuertaEntity;
 
 import jakarta.persistence.Column;
@@ -37,4 +38,8 @@ public class AccesoEntity {
 	@ManyToOne
 	@JoinColumn(name = "id_puerta")
 	private PuertaEntity puerta;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_historialacceso")
+	private HistorialAccesoEntity historialacceso;
 }
