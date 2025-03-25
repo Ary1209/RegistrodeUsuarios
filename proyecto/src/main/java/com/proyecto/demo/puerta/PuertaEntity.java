@@ -1,10 +1,17 @@
 package com.proyecto.demo.puerta;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.proyecto.demo.aceceso.AccesoEntity;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +24,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "puerta")
-public class PuestaEntity {
+public class PuertaEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +36,7 @@ public class PuestaEntity {
 	
 	@Column(name = "ubicacion", nullable = false)
 	private String ubicacion;
+	
+	@OneToMany(mappedBy = "puerta", cascade =CascadeType.ALL, orphanRemoval = true)
+	private List<AccesoEntity>accesos =new  ArrayList<>();
 }
