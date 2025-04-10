@@ -16,8 +16,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return usuarioRepository.save(usuario);
 	}
 
-	@Override
-	public UsuarioEntity actualizcionDeUsuario(UsuarioEntity usuario) {
+	public UsuarioEntity actualizacionDeUsuario(UsuarioEntity usuario) {
 		if (usuario.getId()!= null) {
 			return usuarioRepository.save(usuario);
 		}else {

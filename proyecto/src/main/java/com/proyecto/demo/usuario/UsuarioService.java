@@ -6,7 +6,7 @@ public interface UsuarioService {
 
 	UsuarioEntity registroDeUsuarios (UsuarioEntity usuario);
 	
-	UsuarioEntity actualizcionDeUsuario (UsuarioEntity usuario);
+	UsuarioEntity actualizacionDeUsuario (UsuarioEntity usuario);
 	
 	List<UsuarioEntity> visualizacionDeUsuarios ();
 	
